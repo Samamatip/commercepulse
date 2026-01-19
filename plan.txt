@@ -1,0 +1,35 @@
+1. Store historical data in mongoDB (Mark as synthetic data and generate event_Id for them, add meta_data to mark event)
+2. Create live events scripts to be run daily, to follow a schema with event_id when any event is performed
+{
+    event_id
+    event_type
+    event_time
+    vendor
+    payload
+    ingested_at
+}
+
+3. Create Postgres database for analytics
+4. Normalise data into tables: 
+    dimensions table: ( 
+        customer, 
+        product, 
+        date 
+    ), 
+    facts table: ( 
+        orders (current order state) 
+        payments (append-only) 
+        refunds (append-only) 
+        shipments 
+        order_daily (aggregates) 
+    )
+5. Calculate derived metrics and save them into tables
+    -Daily gross vs net revenue
+    -Payment success rate by vendor
+    -Average time from order creation to payment
+    -Refund rate and partial refunds
+    -Percentage of late-arriving events
+    -Top products by revenue
+
+6. Transform and reconcile different data payload to conform into established tables
+7. Anomaly reporting

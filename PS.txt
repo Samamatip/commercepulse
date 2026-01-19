@@ -1,0 +1,41 @@
+What is our true daily revenue after refunds?
+Which vendors have the highest payment failure rates?
+How long does it take for orders to move from creation to payment?
+How often do refunds arrive days after revenue has already been reported?
+
+
+### KEY ISSUES
+Conflicting numbers between reports
+Orders marked “paid” without successful payments
+Refunds missing from historical revenue
+No traceability from analytics back to raw data
+Inability to reprocess data safely when logic changes
+
+
+### CONSTRAINTS
+Use MongoDB as the raw landing zone
+Use incremental extraction (no full reloads)
+Handle late and duplicate events
+Ensure idempotent pipeline runs
+Normalize historical and live data consistently
+Produce daily data quality reports
+Use GitHub with meaningful commit history
+
+
+### DOCUMENTATIONS
+You must document decisions around:
+Historical batch vs live event handling
+MongoDB vs PostgreSQL responsibilities
+Append-only vs upsert strategies
+Pandas vs SQL transformations
+Correctness vs performance
+Simplicity vs long-term maintainability
+
+
+### FINAL DELIVERABLES
+GitHub repository with clean structure
+Fully runnable pipeline
+SQL schemas and indexes
+Daily data quality reports
+README explaining architecture, assumptions, and trade-offs
+
