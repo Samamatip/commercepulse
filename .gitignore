@@ -1,0 +1,3 @@
+.env
+.ipynb
+/data/live_events/*.jsonl

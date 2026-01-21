@@ -7,8 +7,8 @@ from pathlib import Path
 from typing import Dict, Any
 from pymongo import UpdateOne
 import os
-from DB_connection import get_mongo_client
-from utility import load_json_file
+from src.DB_connection import get_mongo_client
+from src.utility import load_json_file
 load_dotenv()
 
 # Configure logging
